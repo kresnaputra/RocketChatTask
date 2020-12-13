@@ -3,7 +3,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 
 export type ChatStackParamList = {
   Home: undefined;
-  Detail: undefined;
+  Detail: {name: string; id: number};
 };
 
 export interface ChatNavProps<T extends keyof ChatStackParamList> {

@@ -9,7 +9,6 @@ interface IChatListItem {
   chatDescription: string;
   time: string;
   countChat: number;
-  isRead: boolean;
   onPress: (id: number) => void;
 }
 
@@ -19,7 +18,6 @@ const ChatListItem = ({
   chatDescription,
   time,
   countChat,
-  isRead,
   onPress,
 }: IChatListItem) => {
   return (
@@ -37,11 +35,11 @@ const ChatListItem = ({
         <Text
           style={[
             textStyles.reguler,
-            {color: isRead ? colors.secondary : colors.green},
+            {color: countChat > 0 ? colors.green : colors.secondary},
           ]}>
           {time}
         </Text>
-        {!isRead && (
+        {countChat > 0 && (
           <View style={styles.countChatContainer}>
             <Text style={[textStyles.reguler, {color: 'white'}]}>
               {countChat}
