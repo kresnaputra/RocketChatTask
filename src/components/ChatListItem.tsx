@@ -10,6 +10,7 @@ interface IChatListItem {
   time: string;
   countChat: number;
   onPress: (id: number) => void;
+  testID?: string;
 }
 
 const ChatListItem = ({
@@ -19,9 +20,13 @@ const ChatListItem = ({
   time,
   countChat,
   onPress,
+  testID,
 }: IChatListItem) => {
   return (
-    <TouchableOpacity onPress={() => onPress(id)} style={styles.container}>
+    <TouchableOpacity
+      testID={testID}
+      onPress={() => onPress(id)}
+      style={styles.container}>
       <View style={styles.profileContainer}>
         <Text style={[textStyles.reguler, {color: 'white'}]}>
           {name[0].toUpperCase()}

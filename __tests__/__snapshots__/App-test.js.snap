@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen UI 1`] = `
+<Memo(Connect(HomeScreen))
+  navigation={
+    Object {
+      "navigate": [MockFunction],
+    }
+  }
+/>
+`;
