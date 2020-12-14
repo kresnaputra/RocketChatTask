@@ -35,7 +35,6 @@ const HomeScreen = ({navigation, chat, getChatAction}: IHomeScreen) => {
           }
           return (
             <ChatListItem
-              testID="chatItem"
               onPress={detailNavigation}
               id={item.id}
               name={item.name}

@@ -3,14 +3,13 @@ import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {textStyles} from '../constans/TextStyles';
 import {colors} from '../constans/colors';
 
-interface IChatListItem {
+export interface IChatListItem {
   id: number;
   name: string;
   chatDescription: string;
   time: string;
   countChat: number;
   onPress: (id: number) => void;
-  testID?: string;
 }
 
 const ChatListItem = ({
@@ -20,13 +19,9 @@ const ChatListItem = ({
   time,
   countChat,
   onPress,
-  testID,
 }: IChatListItem) => {
   return (
-    <TouchableOpacity
-      testID={testID}
-      onPress={() => onPress(id)}
-      style={styles.container}>
+    <TouchableOpacity onPress={() => onPress(id)} style={styles.container}>
       <View style={styles.profileContainer}>
         <Text style={[textStyles.reguler, {color: 'white'}]}>
           {name[0].toUpperCase()}
