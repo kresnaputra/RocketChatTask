@@ -54,6 +54,7 @@
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.2.2",
     "eslint": "^6.5.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
     "metro-react-native-babel-preset": "^0.59.0",
     "react-dom": "16.13.1",
@@ -62,6 +63,12 @@
   },
   "jest": {
     "preset": "react-native",
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    },
+    "setupFiles": [
+      "./__mocks__/jest/setup.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
